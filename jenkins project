@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'https://github.com/Navyavennam/project.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'javac Sample.java'
+                echo 'run build'
+      
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'java Sample'
+                echo 'run test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                echo "Deployment finished successfully."
+            }
+        }
+       }
+    }
